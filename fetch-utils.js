@@ -28,7 +28,7 @@ export async function signupUser(email, password) {
 
 export async function signInUser(email, password) {
     const response = await client.auth.signIn({ email, password });
-    
+
     return response.user;
 }
 
@@ -47,5 +47,11 @@ function checkError({ data, error }) {
 export async function getMovies() {
     const resp = await client.from('movies').select('*, genre (*)');
     console.log(resp, 'data');
+    return checkError(resp);
+}
+
+export async function getMovieById(id) {
+    const resp = await client.from('movies').select('*').match({ id });
+    console.log(resp);
     return checkError(resp);
 }
