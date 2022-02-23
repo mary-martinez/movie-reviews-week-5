@@ -1,34 +1,32 @@
-import { redirectIfLoggedIn, signInUser, signupUser } from './fetch-utils.js';
+import { getMovies } from "./fetch-utils.js";
 
-const signInForm = document.getElementById('sign-in');
-const signInEmail = document.getElementById('sign-in-email');
-const signInPassword = document.getElementById('sign-in-password');
+const container = document.getElementById('movie-container');
 
-const signUpForm = document.getElementById('sign-up');
-const signUpEmail = document.getElementById('sign-up-email');
-const signUpPassword = document.getElementById('sign-up-password');
+function renderMovie(movie) {
+    // const a = document.createElement('a');
+    const div = document.createElement('div');
+    div.classList.add('movie');
+    
+    const title = document.createElement('h3');
+    const img = document.createElement('img');
+    img.src = './assets/alchemy-logo.png';
+    const rating = document.createElement('p');
+    title.textContent = movie.title;
+    rating.textContent = `Rating: ${movie.rating}`;
 
-// if user currently logged in, redirect
-redirectIfLoggedIn();
+    div.append(title, img, rating);
+    return div;
+}
 
-signUpForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const user = await signupUser(signUpEmail.value, signUpPassword.value);
+async function displayMovies() {
+    const movies = await getMovies();
+    
+    movies.forEach(element => {
+        container.append(renderMovie(element));
+    });
+}
 
-    if (user) {
-        redirectIfLoggedIn();
-    } else {
-        console.error(user);
-    }
-});
 
-signInForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const user = await signInUser(signInEmail.value, signInPassword.value);
-
-    if (user) {
-        redirectIfLoggedIn();
-    } else {
-        console.error(user);
-    }
+window.addEventListener('load', async () => {
+    await displayMovies();
 });

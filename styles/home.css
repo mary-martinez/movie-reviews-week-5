@@ -1,1 +1,19 @@
 /* add home page styles here */
+#movie-container {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+/* column-gap: 10vw; */
+}
+
+/* .movie {
+    width: 30vw;
+    height: 30vh;
+} */
+/* 
+.movie img {
+    width: 100%;
+    height: auto;
+} */
