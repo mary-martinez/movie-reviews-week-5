@@ -1,5 +1,6 @@
 const SUPABASE_URL = 'https://lxifeplqjanpuugbzgyn.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4aWZlcGxxamFucHV1Z2J6Z3luIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ0MzU0NTEsImV4cCI6MTk2MDAxMTQ1MX0.4hkIbGdYMJ7SzqMSm39JtJRvMyFal0vMXHHWB0APEJw';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4aWZlcGxxamFucHV1Z2J6Z3luIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ0MzU0NTEsImV4cCI6MTk2MDAxMTQ1MX0.4hkIbGdYMJ7SzqMSm39JtJRvMyFal0vMXHHWB0APEJw';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -24,7 +25,6 @@ export async function signupUser(email, password) {
 
     return response.user;
 }
-
 
 export async function signInUser(email, password) {
     const response = await client.auth.signIn({ email, password });
@@ -53,5 +53,10 @@ export async function getMovies() {
 export async function getMovieById(id) {
     const resp = await client.from('movies').select('*').match({ id }).single();
     console.log(resp);
+    return checkError(resp);
+}
+
+export async function getUserRatings(movie_id) {
+    const resp = await client.from('user_ratings').select('*').match({ movie_id });
     return checkError(resp);
 }

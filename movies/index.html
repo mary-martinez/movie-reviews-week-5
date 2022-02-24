@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/home.css" />
+        <link rel="stylesheet" href="./movies.css" />
+        <title>Document</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <link rel="stylesheet" href="./movies.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
-        </div>
-    </header>    
-    <button id="logout">Logout</button>
-    <main>
-        <div class="container">
-            <div class="title">
-                <h1 id="title">Scream</h1>
+    <body>
+        <header>
+            <div class="gutter-right logo">
+                <img src="../assets/big-logo.png" />
             </div>
-            <div class="img">
-                <img src="../assets/alchemy-logo.png" id="img">
-            </div>
-            <div class="summary">
-                <h3>Summary</h3>
-                <p id="summary">Here's a summary</p>
-            </div>
-            <div class="buttons">
-               
-                <button class="button">Write a Review</button>
-                <div class="hidden" id="form-container">
-                    <form id="form">
-                        <label for="review-text">
-                            Write your Review
-                            <input type="text" name="review-text">
-                        </label>
-                        <label for="">
-                            Rating
-                        <select name="rating" id="rating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                            
-                        </label>
-
-
-                        <button>Submit</button>
-
-                    </form>
-
+        </header>
+        <button id="logout">Logout</button>
+        <main>
+            <div class="container">
+                <div class="title">
+                    <h1 id="title">Scream</h1>
                 </div>
-            </div>
-            <div class="user_reviews">
-                <h3>Reviews</h3>
+                <div class="img">
+                    <img src="../assets/alchemy-logo.png" id="img" />
+                </div>
+                <div class="summary">
+                    <h3>Summary</h3>
+                    <p id="summary">Here's a summary</p>
+                </div>
+                <div class="buttons">
+                    <button class="button">Write a Review</button>
+                    <div class="hidden" id="form-container">
+                        <form id="form">
+                            <label for="review-text">
+                                Write your Review
+                                <input type="text" name="review-text" />
+                            </label>
+                            <label for="">
+                                Rating
+                                <select name="rating" id="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </label>
+
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="user_reviews">
+                    <h3>Reviews</h3>
+                </div>
                 <div id="reviews-container">
                     <div class="review">
                         <p>This was a movie that I saw!</p>
-                        <img src="../assets/alchemy-logo.png">
-                        <img class="stars" src="../assets/alchemy-logo.png">
-                    </div> 
-
+                        <img src="../assets/alchemy-logo.png" />
+                        <img class="stars" src="../assets/alchemy-logo.png" />
+                    </div>
                 </div>
             </div>
-          </div>
-        
-    </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
-    </footer>
-    <script type="module" src="./movies.js"></script>
-</body>
-
+        </main>
+        <footer>
+            <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
+        </footer>
+        <script type="module" src="./movies.js"></script>
+    </body>
 </html>
