@@ -34,13 +34,43 @@
                 <p id="summary">Here's a summary</p>
             </div>
             <div class="buttons">
-                <h3>Reviews</h3>
+               
                 <button class="button">Write a Review</button>
+                <div class="hidden" id="form-container">
+                    <form id="form">
+                        <label for="review-text">
+                            Write your Review
+                            <input type="text" name="review-text">
+                        </label>
+                        <label for="">
+                            Rating
+                        <select name="rating" id="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                            
+                        </label>
+
+
+                        <button>Submit</button>
+
+                    </form>
+
+                </div>
             </div>
             <div class="user_reviews">
-                <p>This was a movie that I saw!</p>
-                <img src="../assets/alchemy-logo.png">
-                <img class="stars" src="../assets/alchemy-logo.png">
+                <h3>Reviews</h3>
+                <div id="reviews-container">
+                    <div class="review">
+                        <p>This was a movie that I saw!</p>
+                        <img src="../assets/alchemy-logo.png">
+                        <img class="stars" src="../assets/alchemy-logo.png">
+                    </div> 
+
+                </div>
             </div>
           </div>
         
