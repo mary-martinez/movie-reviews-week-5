@@ -51,7 +51,7 @@ export async function getMovies() {
 }
 
 export async function getMovieById(id) {
-    const resp = await client.from('movies').select('*').match({ id });
+    const resp = await client.from('movies').select('*').match({ id }).single();
     console.log(resp);
     return checkError(resp);
 }
