@@ -4,6 +4,8 @@
 
 If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
 
+https://miro.com/app/board/uXjVOKEOd1k=/?invite_link_id=770805752976
+
 ## Making a plan
 
 1. **Make a drawing of your app. Simple "wireframes"**
